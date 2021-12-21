@@ -21,10 +21,8 @@ function showMobileLinks() {
 	hideMenu(mobileLanguageBox);
   if (mobileLinks.style.display === "flex") {
     mobileLinks.style.display = "none";
-    document.body.style.overflow = 'auto';
   } else {
     mobileLinks.style.display = "flex";
-    document.body.style.overflow = 'hidden';
   }
 }
 
@@ -32,10 +30,8 @@ function showMobileLanguageBox() {
 	hideMenu(mobileLinks);
   if (mobileLanguageBox.style.display === "flex") {
     mobileLanguageBox.style.display = "none";
-    document.body.style.overflow = 'auto';
   } else {
     mobileLanguageBox.style.display = "flex";
-    document.body.style.overflow = 'hidden';
   }
 }
 
@@ -46,20 +42,56 @@ function hideMenu (menu) {
 
 
 
-/* Mobile Search Box */
+/* Desktop Searching */
+
+let desktopSearchIcon = document.querySelector("#desktop-search-icon-box");
+let desktopSearchInput = document.querySelector("#desktop-search-box-input");
+
+function desktopSearch () {
+  console.log('searching for ' + desktopSearchInput.value);
+}
+
+
+
+
+/* Mobile Searching */
+
 let mobileSearchIcon = document.querySelector("#mobile-search-icon-box");
-let mobileSearchInput = document.querySelector("#mobile-search-input");
+let mobileSearchInput = document.querySelector("#mobile-search-box-input");
 
 mobileSearchIcon.addEventListener('click', showMobileSearchInput);
 
 function showMobileSearchInput () {
 	mobileSearchInput.style.display = 'inline-block';
+  mobileSearchIcon.addEventListener('click', mobileSearch);
 }
+
+function mobileSearch () {
+  console.log('searching for ' + mobileSearchInput.value);
+}
+
+
+
+
+/* Hide all modals when user resizes the window */
 
 function hideAllModals () {
   hideMenu(mobileLinks);
   hideMenu(mobileLanguageBox);
   document.body.style.overflow = 'auto';
 }
-
 window.addEventListener('resize', hideAllModals)
+
+
+
+
+/* Sign Up and Sign In Forms */
+
+function showSignUpForm () {
+  console.log('sign up')
+};
+function showSignInForm () {
+  console.log('sign in')
+};
+
+

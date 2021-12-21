@@ -17,53 +17,52 @@
 	<link rel="stylesheet" href="assets/css/style.css">
 
 	<!-- Google Fonts 'Lora' -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Pacifico&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Pacifico&display=swap" rel="stylesheet"> -->
 
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
 </head>
 <body>
+	<header>
+		<div class="desktop-header container-fluid">
+			<div class="container-xxl d-flex justify-content-between align-items-center px-5 py-1">
+				<img id="desktop-logo" src="assets/images/logo.png" alt="Arvestanoc logo">
+				<div class="flex-buffer"></div>
 
-	<!-- <header class="container-fluid px-5 py-1 text-white"> -->
-	<header class="text-white">
+				<div class="desktop-nav">
+					<a href="index.html">
+						<i class="fas fa-home"></i>
+						<span>Home</span>
+					</a>
+					<a href="masters.html">
+						<i class="fas fa-users"></i>
+						<span>Masters</span>
+					</a>
+					<a href="works.html">
+						<i class="fas fa-boxes"></i>
+						<span>Works</span>
+					</a>
+					<a href="signup.html">
+						<i class="fas fa-sign-in-alt" style="transform: rotate(-90deg)"></i>
+						<span>Sign Up</span>
+					</a>
+					<a href="signin.html">
+						<i class="fas fa-sign-in-alt"></i>
+						<span>Sign In</span>
+					</a>
+				</div>
 
-		<div class="desktop-header container-fluid ">
-			
-			<img id="logo" src="assets/images/logo.png" alt="Arvestanoc logo">
-
-			<ul class="nav my-2 justify-content-center align-items-center my-md-0 text-small">
-				<li class="py-2 px-3 d-flex flex-column align-items-center">
-					<i class="fas fa-home"></i>
-					<span>Home</span>
-				</li>
-				<li class="py-2 px-3 d-flex flex-column align-items-center">
-					<i class="fas fa-users"></i>
-					<span>Masters</span>
-				</li>
-				<li class="py-2 px-3 d-flex flex-column align-items-center">
-					<i class="fas fa-boxes"></i>
-					<span>Works</span>
-				</li>
-				<li class="py-2 px-3 d-flex flex-column align-items-center">
-					<i class="fas fa-sign-in-alt" style="transform: rotate(-90deg);"></i>
-					<span>Sign Up</span>
-				</li>
-				<li class="py-2 px-3 d-flex flex-column align-items-center">
-					<i class="fas fa-sign-in-alt"></i>
-					<span>Sign In</span>
-				</li>
-
-				<div class="mobile-search-box">
-					<input class="mobile-search-input" type="text" placeholder="Search Works/Authors" style="display: inline-block;">
-					<div class="mobile-search-icon-box">
-						<i class="mobile-search-icon fas fa-search"></i>					
+				<div class="header-search-box">
+					<input id="desktop-search-box-input"  class="search-box-input" type="text" placeholder="Search Works/Authors">
+					<div id="desktop-search-icon-box"  class="search-icon-box" onclick="desktopSearch()" title="search">
+						<i class="search-icon fas fa-search"></i>
 					</div>
 				</div>
 
-				<li class="d-flex align-items-center justify-content-center mb-2">
+				<div class="d-flex align-items-center justify-content-center">
 					<div class="language-switcher">
 						<div class="language-upper">
 							<img class="flag" src="assets/images/armflag.svg" alt="armenian flag" onclick="toggleLanguage()">
@@ -87,15 +86,15 @@
 							<div class="language-lower-tail"></div>
 						</div>
 					</div>
-				</li>
-			</ul>
+				</div>
+			</div>
 		</div>
 
 		<div class="mobile-header">
 			<div class="mobile-header-corner">
-					<a href="javascript:void(0);" class="icon" onclick="showMobileLinks()">
+				<div class="burger-icon" onclick="showMobileLinks()">
 					<i class="fa fa-bars"></i>
-				</a>
+				</div>
 			</div>
 			<h4>Արվեստանոց</h4>			
 			<div class="mobile-header-corner">
@@ -109,47 +108,47 @@
 
 		<div id="mobile-links" style="display: none">
 			<div class="mobile-link-box">
-				<a href="#news">Home</a>
-				<a href="#contact">Masters</a>
-				<a href="#about">Works</a>	
-				<div class="mobile-sign-box">
-					<a href="#about">Sign Up</a>
-					<a href="#about">Sign In</a>				
-				</div>			
-			</div>			
-			<div class="mobile-search-box">
-				<input id="mobile-search-input" class="mobile-search-input" type="text" placeholder="Search Works/Authors" style="display: none">
-				<div id="mobile-search-icon-box" class="mobile-search-icon-box">
-					<i class="mobile-search-icon fas fa-search"></i>					
+				<a href="index.html">Home</a>
+				<a href="masters.html">Masters</a>
+				<a href="works.html">Works</a>	
+				<a href="signup.html">Sign Up</a>	
+				<a href="signin.html">Sign In</a>	
+			</div>
+
+			<div id="mobile-search-box" class="header-search-box">
+				<input id="mobile-search-box-input" class="search-box-input" type="text" placeholder="Search Works/Authors" style="display: none">
+				<div id="mobile-search-icon-box" class="search-icon-box" title="search">
+					<i class="search-icon fas fa-search"></i>	
 				</div>
 			</div>
 		</div>
 
 		<div id="mobile-language-box" style="display: none">
-			<a href="#news">
+			<a href="index.html">
 				<img class="flag" src="assets/images/enflag.svg" alt="english flag">
 			</a>
-			<a href="#contact">
+			<a href="index-arm.html">
 				<img class="flag" src="assets/images/armflag.svg" alt="armenian flag">
 			</a>
-			<a href="#about">
+			<a href="index-ru.html">
 				<img class="flag" src="assets/images/ruflag.svg" alt="russian flag">
 			</a>
 		</div>
-
 	</header> 
 
 	<!-- WELCOME SECTION -->
 	<section class="container-fluid" id="welcome-section">
 		<div class="section-cover">
+			<div class="container-xxl px-2 py-3 px-sm-5 py-sm-4">
 			<div class="welcome-section-content">
 				<h1>Լավագույն նվերը արվեստի գործն է</h1><br>
 				<h6>Գրանցվիր և օգտվիր կայքի բոլոր հնարավորություններից</h6>	<br>
 				<div class="welcome-btn-box">
-					<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">Գրանցվել</button>
-					<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">Մուտք</button>
+					<a type="button" href="signup.html" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" onclick="showSignUpForm()">Գրանցվել</a>
+					<a type="button" href="signin.html" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" onclick="showSignInForm()">Մուտք</a>
 				</div>
-			</div>			
+			</div>	
+			</div>		
 		</div>
 	</section>
 
@@ -188,9 +187,9 @@
 					</div>
 				</div>
 				<div class="card">
-					<div class="card-img-top"><img src="assets/images/masters/lorenc.jpg"></div>
+					<div class="card-img-top"><img src="assets/images/masters/saryan.jpg"></div>
 					<div class="card-body">
-						<h5 class="card-title">Արմեն Լոռենց</h5>
+						<h5 class="card-title">Մարտիրոս Սարյան</h5>
 						<h6 class="card-subtitle mb-2 text-muted">Նկարիչ</h6>
 					</div>
 				</div>
@@ -351,9 +350,11 @@
 		</div>
 	</section>
 
-	<footer class="px-3 pt-4 pb-3 text-white bg-dark d-flex flex-column justify-content-center align-items-center text-center">
-		<h6>&copy 2021-2022 Noyemberyan Webmasters Group</h6>
-		<h6>All rights are reserved</h6>
+	<footer class="container-fluid px-3 pt-4 pb-3 text-white bg-dark d-flex flex-column justify-content-center align-items-center text-center">
+		<div class="container-xxl px-2 px-sm-5 py-sm-4">
+			<h6>&copy 2021-2022 Noyemberyan Webmasters Group</h6>
+			<h6>All rights are reserved</h6>
+		</div>		
 	</footer>
  
 	<!-- Bootstrap JS -->
